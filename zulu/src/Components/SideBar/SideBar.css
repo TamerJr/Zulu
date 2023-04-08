@@ -1,11 +1,37 @@
-.SideBarNavigationMenu{
+.SideBar{
     display: none;
-    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 
 }
+ul.SideBarNavigationMenu{
+    grid-column: 1 /2;
+    list-style: none;
+    display: flex;
+    height:100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    gap:1rem;
+}
+ul a{
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    color: var(--links-text);
+
+}
+
+.SideBarButton{
+    margin: 1rem 0;
+}
 @media screen and ( max-width : 800px) {
-    .SideBarNavigationMenu{
-        display: flex;
+    .SideBar{
+        display: block;
+        
         padding-left: 0;
 
     }

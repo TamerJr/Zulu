@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useNavigate ,Link } from "react-router-dom";
 import userAuth from "../../Features/Context/AuthUser";
+import "./SideBar.css"
 const SideBar = () => {
   const {user} =useContext(userAuth)
     const navigate=useNavigate();
@@ -26,14 +27,14 @@ const SideBar = () => {
           <li>Admin</li>
         </Link>}
         {! user ? <li >
-            <button className="SignInButton"onClick={()=>handleAuthPage("/signin")}></button>
+            <button className="SignInButton SideBarButton"onClick={()=>handleAuthPage("/signin")}> Sign In</button>
         </li> :
-        <button className="LogOutButton" onClick={handleLogOut}>
-
+        <button className="LogOutButton SideBarButton" onClick={handleLogOut}>
+          LogOut
         </button>
         }
         <li>
-            <button className="SignUpButton"onClick={()=>handleAuthPage("/signup")}></button>
+            <button className="SignUpButton SideBarButton"onClick={()=>handleAuthPage("/signup")}> Sign Up</button>
         </li>
       </ul>
     </aside>

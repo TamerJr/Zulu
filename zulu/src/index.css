@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 :root{
-    --bgc:#FFF3E2;
+    --bgc:#fcf7f1;
     --links-text:#E74646;
     --links-hoverText:#FA9884;
     --desctext:#454545;
@@ -27,6 +27,7 @@ button
     font-weight: 600;
     cursor: pointer;
     font-size: 16px;
+    background-color: white;
 }
 button:hover{
     border: 1px solid white;

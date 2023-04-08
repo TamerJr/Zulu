@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import "./Navbar.css";
 import { GiHamburgerMenu } from "react-icons/gi";
+import {AiFillCloseCircle} from "react-icons/ai"
 import { useNavigate, Link } from "react-router-dom";
 import SideBar from "../SideBar/SideBar";
 import Logo from "../../assets/Logo.png";
@@ -41,8 +42,14 @@ const Navbar = () => {
       <div className="ToggleSettings" onClick={() => setToggle(!toggle)}>
         <GiHamburgerMenu />
       </div>
-      {toggle && <SideBar />}
+      {toggle && <div className="asideContainer">
+        <AiFillCloseCircle size={25} color="black"  onClick={()=>setToggle(!toggle)} opacity={.4}/>
+        <SideBar />
+        </div>
+        }
       <div className="AuthOptions">
+      { ! user ?
+
         <button
           className="SignInButton"
           onClick={() => handleAuthPage("/signin")}
@@ -50,11 +57,11 @@ const Navbar = () => {
           {" "}
           Log In
         </button>
-        {user && (
+        : 
           <button className="LogOutButton" onClick={handleLogOut}>
             Log Out
           </button>
-        )}
+        }
         <button
           className="SignUpButton"
           onClick={() => handleAuthPage("/signup")}

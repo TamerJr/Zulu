@@ -1,7 +1,8 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-
+import React, { useContext } from "react";
+import { useNavigate ,Link } from "react-router-dom";
+import userAuth from "../../Features/Context/AuthUser";
 const SideBar = () => {
+  const {user} =useContext(userAuth)
     const navigate=useNavigate();
     const handleAuthPage=(arg)=>{
         navigate(arg)
@@ -25,14 +26,14 @@ const SideBar = () => {
           <li>Admin</li>
         </Link>}
         {! user ? <li >
-            <button className="SignInButton"onClick={handleAuthPage("/signin")}></button>
+            <button className="SignInButton"onClick={()=>handleAuthPage("/signin")}></button>
         </li> :
         <button className="LogOutButton" onClick={handleLogOut}>
 
         </button>
         }
         <li>
-            <button className="SignUpButton"onClick={handleAuthPage("/signup")}></button>
+            <button className="SignUpButton"onClick={()=>handleAuthPage("/signup")}></button>
         </li>
       </ul>
     </aside>

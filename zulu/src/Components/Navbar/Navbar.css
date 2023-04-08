@@ -1,48 +1,72 @@
 .Navbar {
-  width: 100;
+  max-width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1rem;
-  background: var(--bgc);
+  padding: 0 3rem;
+  font-size: var(--links-font-size);
+  background-color: white;
+}
+nav.Navbar img {
+  height: 60px;
 }
 .sticky {
   position: fixed;
   top: 0;
 }
-ul.NavigationMenu{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem ;
-    list-style: none;
-    padding-left: 0;
-    font-size: var(--links-font-size);
-}
-ul.NavigationMenu *{
-    text-decoration: none;
-    
-    color: var(--links-text);
-}
-ul.NavigationMenu *:hover{
-    color: var(--links-hoverText);
-}
-.ToggleSettings{
-    color: var(--links-text);
-    display: none;
-    
-}
-.AuthOptions{
+ul.NavigationMenu {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: .5rem ;
+  gap: 3rem;
+  list-style: none;
+  padding-left: 0;
+  font-size: var(--links-font-size);
 }
-@media screen and (max-width :800px) {
-  .ToggleSettings{
-    display:block ;
+ul.NavigationMenu * {
+  transition: 400ms ease-in-out;
+  font-weight: 700;
+  text-decoration: none;
+
+  color: var(--links-text);
+}
+ul.NavigationMenu *:hover {
+  color: var(--links-hoverText);
+}
+.ToggleSettings {
+  color: var(--links-text);
+  display: none;
+}
+.AuthOptions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.SignInButton{
+  color: rgb(6, 108, 6);
+}
+.SignUpButton{
+  color: rgb(31, 77, 170);
+
+}
+.SignInButton:hover{
+  background-color: rgba(6, 108, 6, 0.678);
+  color: aliceblue;
+}
+.SignUpButton:hover{
+  background-color: rgba(31, 77, 170, 0.629);
+  color: white;
+
+}
+@media screen and (max-width: 800px) {
+  .ToggleSettings {
+    display: block;
   }
-  .AuthOptions{
+  ul.NavigationMenu{
+    display: none;
+  }
+  .AuthOptions {
     display: none;
   }
 }

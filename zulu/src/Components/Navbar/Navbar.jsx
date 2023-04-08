@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Navbar.css"
 import {GiHamburgerMenu} from "react-icons/gi"
 import { useNavigate } from "react-router-dom";
+import SideBar from "../SideBar/SideBar";
 const Navbar = () => {
     const [toggle ,setToggle]=useState(false)
     const navigate=useNavigate();

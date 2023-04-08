@@ -11,13 +11,15 @@ nav.Navbar img {
   height: 60px;
 }
 .sticky {
-  position: fixed;
+  position: sticky;
   top: 0;
+  background-color: rgba(0, 0, 0, 0.787);
 }
 div.asideContainer{
   display: none;
   height: 100%;
   position: absolute;
+  z-index: 100;
   right: 0px;
   background-color: #fff;
   top: 0;
@@ -70,7 +72,7 @@ ul.NavigationMenu *:hover {
 
 }
 .SignInButton:hover{
-  background-color: rgba(6, 108, 6, 0.678);
+  background-color: rgba(9, 151, 9, 0.678);
   color: aliceblue;
 }
 .SignUpButton:hover{

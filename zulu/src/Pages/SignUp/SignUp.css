@@ -1,0 +1,37 @@
+section.SignUpSection{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form.SignUp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-width: 360px;
+    padding:5px 10px;
+    box-shadow: var(--box-shadow);
+    border-radius: 15px;
+    background-color: #fff;
+
+}
+.inputs-field input{
+    border: none;
+    padding: 10px 5px;
+    border: 1px solid rgba(0, 0, 0, 0.314);
+    border-radius:5px ;
+    width :240px;
+    outline:none;
+}
+.inputs-field {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+
+form.SignUp legend{
+    font-size: 24px;
+    font-weight: 600;
+    }

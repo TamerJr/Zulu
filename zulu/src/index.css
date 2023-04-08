@@ -8,7 +8,7 @@
     --links-font-size:20px;
     --header-font-size:28px;
     --supheader-font-size:24px;
-    --box-shadow: 0px 0px 2px 10px rgba(0, 0, 0, 0.337);
+    --box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.337);
 }
 *{
     font-family: 'Nunito', sans-serif;
@@ -17,6 +17,12 @@ body{
     background: var(--bgc);
     margin: 0;
     height: 100vh;
+}
+#root {
+    height: 100%;
+}
+#root .App{
+    height: 100%;
 }
 button
 {
@@ -31,4 +37,25 @@ button
 }
 button:hover{
     border: 1px solid white;
+}
+li.AdminRoute{
+    color: #b7a2a2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     gap: 1.5rem;
+}
+li.AdminRoute .gear{
+    animation: GearSpiner 10s  linear infinite;
+    -webkit-animation: GearSpiner 10s linear infinite;
+
+}
+
+@keyframes GearSpiner {
+   
+    to{-webkit-transform :rotate( 360deg);}
+}
+@-webkit-keyframes GearSpiner {
+   
+    to{-webkit-transform :rotate( 360deg);}
 }

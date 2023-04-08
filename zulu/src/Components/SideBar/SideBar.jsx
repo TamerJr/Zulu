@@ -1,9 +1,13 @@
 import React, { useContext } from "react";
 import { useNavigate ,Link } from "react-router-dom";
 import userAuth from "../../Features/Context/AuthUser";
+import {BsGearFill} from "react-icons/bs"
 import "./SideBar.css"
 const SideBar = () => {
-  const {user} =useContext(userAuth)
+  const {user,LogOut} =useContext(userAuth)
+  const handleLogOut=()=>{
+    LogOut()
+  }
     const navigate=useNavigate();
     const handleAuthPage=(arg)=>{
         navigate(arg)
@@ -20,17 +24,20 @@ const SideBar = () => {
         <Link to="/blog">
           <li>Blog</li>
         </Link>
-        <Link to="/account">
+       {
+        user &&
+         <Link to="/account">
           <li>Account</li>
         </Link>
-        {user && <Link to="/adminpage">
-          <li>Admin</li>
+        }
+        {user?.uid==(import.meta.env.VITE_FIRE_BASE_APP_ADMIN) && <Link to="/admin">
+          <li className="AdminRoute">Admin <BsGearFill className="gear"/></li>
         </Link>}
         {! user ? <li >
             <button className="SignInButton SideBarButton"onClick={()=>handleAuthPage("/signin")}> Sign In</button>
         </li> :
         <button className="LogOutButton SideBarButton" onClick={handleLogOut}>
-          LogOut
+          LogOut 
         </button>
         }
         <li>

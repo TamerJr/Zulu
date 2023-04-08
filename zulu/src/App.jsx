@@ -1,10 +1,10 @@
 import { Route, Routes } from 'react-router-dom'
-import './App.css'
 import { Account, Admin, Blog, BlogPost, Footer, Landing, Navbar, Shop, SignIn, SignUp } from './Utilities'
 import { useContext } from 'react'
 import userAuth from './Features/Context/AuthUser'
 function App() {
 const {user}=useContext(userAuth)
+console.log(user?.uid)
   return (
     <div className="App">
 

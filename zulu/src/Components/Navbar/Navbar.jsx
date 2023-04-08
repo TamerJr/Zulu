@@ -3,6 +3,7 @@ import "./Navbar.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 import {AiFillCloseCircle} from "react-icons/ai"
 import { useNavigate, Link } from "react-router-dom";
+import {BsGearFill} from "react-icons/bs"
 import SideBar from "../SideBar/SideBar";
 import Logo from "../../assets/Logo.png";
 import userAuth from "../../Features/Context/AuthUser";
@@ -14,14 +15,12 @@ const Navbar = () => {
     navigate(arg);
   };
 
-  const scrollingPostion = () => {
-    let navbar = document.querySelector(".Navbar");
-    if (navbar.offsetTop < window.screenY) {
-      navbar.classList.add("sticky");
-    } else {
-      navbar.classList.remove("sticky");
-    }
-  };
+  window.addEventListener("scroll",()=>{
+    let navbar=document.querySelector("nav");
+   navbar?.classList.toggle("sticky",window.scrollY>0)
+  
+   
+  })
   return (
     <nav className="Navbar">
       <img src={Logo} alt="Logo" title="Zulu" />
@@ -32,9 +31,15 @@ const Navbar = () => {
         <Link to="/shop">
           <li>Shop</li>
         </Link>
-        <Link to="/account">
+        {
+          user&&
+          <Link to="/account">
           <li>Account</li>
         </Link>
+        }
+        {user?.uid==(import.meta.env.VITE_FIRE_BASE_APP_ADMIN) && <Link to="/admin">
+          <li className="AdminRoute">Admin <BsGearFill className="gear"/></li>
+        </Link>}
         <Link to="/blog">
           <li>Blog</li>
         </Link>

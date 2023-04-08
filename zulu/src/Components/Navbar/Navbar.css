@@ -1,0 +1,48 @@
+.Navbar {
+  width: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  background: var(--bgc);
+}
+.sticky {
+  position: fixed;
+  top: 0;
+}
+ul.NavigationMenu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem ;
+    list-style: none;
+    padding-left: 0;
+    font-size: var(--links-font-size);
+}
+ul.NavigationMenu *{
+    text-decoration: none;
+    
+    color: var(--links-text);
+}
+ul.NavigationMenu *:hover{
+    color: var(--links-hoverText);
+}
+.ToggleSettings{
+    color: var(--links-text);
+    display: none;
+    
+}
+.AuthOptions{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem ;
+}
+@media screen and (max-width :800px) {
+  .ToggleSettings{
+    display:block ;
+  }
+  .AuthOptions{
+    display: none;
+  }
+}

@@ -1,0 +1,11 @@
+.SideBarNavigationMenu{
+    display: none;
+
+}
+@media screen and ( max-width : 800px) {
+    .SideBarNavigationMenu{
+        display: flex;
+        padding-left: 0;
+
+    }
+}

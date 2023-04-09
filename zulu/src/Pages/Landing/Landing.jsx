@@ -1,8 +1,9 @@
 import React from 'react'
-import {Values} from "../../Utilities"
+import {Header,Values} from "../../Utilities"
 const Landing = () => {
   return (
     <main>
+      <Header/>
       <Values/>
     </main>
   )

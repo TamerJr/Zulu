@@ -9,9 +9,11 @@ export {default as BlogElement} from "./Components/BlogElement/BlogEle"
 export {default as ContactUs} from "./Components/ContactUs/ContactUs"
 export {default as ShopEle} from "./Components/ShopEle/ShopEle"
 export {default as Preferances} from "./Components/Preferances/Preferances"
-export {default as Values} from "./Components/Values/Values"
+export {default as Header} from "./Components/Header/Header"
+export {default as Values } from "./Components/Values/Values"
 
-//Pages 
+//Pages
+
 export {default as Account} from "./Pages/Account/Account"
 export {default as Landing} from "./Pages/Landing/Landing"
 export {default as SignIn} from "./Pages/SignIn/SignIn"

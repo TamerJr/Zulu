@@ -1,8 +1,10 @@
 import React from 'react'
-
+import {Values} from "../../Utilities"
 const Landing = () => {
   return (
-    <div>Landing</div>
+    <main>
+      <Values/>
+    </main>
   )
 }
 

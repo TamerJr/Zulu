@@ -65,6 +65,7 @@ ul.NavigationMenu *:hover {
 }
 .LogOutButton{
   color: rgba(170, 52, 31, 0.629);
+  background-color: #fff;
 
 }
 .LogOutButton:hover{

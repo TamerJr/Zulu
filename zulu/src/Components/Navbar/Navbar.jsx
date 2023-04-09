@@ -23,7 +23,9 @@ const Navbar = () => {
   })
   return (
     <nav className="Navbar">
+      <Link to="/">
       <img src={Logo} alt="Logo" title="Zulu" />
+      </Link>
       <ul className="NavigationMenu">
         <Link to="/">
           <li>Home</li>

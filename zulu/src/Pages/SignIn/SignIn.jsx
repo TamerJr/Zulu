@@ -21,7 +21,7 @@ const SignIn = () => {
           <input type="password" onChange={e=>setPassword(e.target.value)}  required placeholder="Enter Password" id="Password" />
         </p>
         <p>
-          Already have Account <Link to="/signup">Sign Up</Link>
+          Wanna Create An Account <Link to="/signup">Sign Up</Link>
         </p>
         <button className="submit" >Enter</button>
     </form>

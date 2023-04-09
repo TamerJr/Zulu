@@ -2,9 +2,9 @@ import { Route, Routes } from 'react-router-dom'
 import { Account, Admin, Blog, BlogPost, Footer, Landing, Navbar, Shop, SignIn, SignUp } from './Utilities'
 import { useContext } from 'react'
 import userAuth from './Features/Context/AuthUser'
+import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute'
 function App() {
 const {user}=useContext(userAuth)
-console.log(user?.uid)
   return (
     <div className="App">
 
@@ -16,9 +16,15 @@ console.log(user?.uid)
         <Route path="/shop" element={<Shop/>}/>
         <Route path="/blogpost/:id" element={<BlogPost/>}/>
         <Route path="/blog" element={<Blog/>}/>
-        <Route path="/admin" element={<Admin/>}/>
-        <Route path="/account" element={<Account/>}/>
-      </Routes>
+       {user?.uid==(import.meta.env.VITE_FIRE_BASE_APP_ADMIN) &&<Route path="/admin" element={<Admin/>}/>}
+       <Route
+          path="/account"
+          element={
+            <ProtectedRoute>
+              <Account/>
+            </ProtectedRoute>
+          }/>
+          </Routes>
       {
         user&&
         <Footer/>

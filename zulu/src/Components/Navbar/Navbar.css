@@ -12,6 +12,7 @@ nav.Navbar img {
 }
 .sticky {
   position: sticky;
+  z-index: 1000;
   top: 0;
   background-color: rgba(0, 0, 0, 0.787);
 }
